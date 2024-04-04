@@ -1,23 +1,27 @@
-# Bus Reservation System
+# 🚌 Bus Reservation System
 
-PROJECT CREATED BY : Balamurugan P M
+**PROJECT CREATED BY**: Balamurugan P M
 
-College : AVS College of Technology
+**College**: AVS College of Technology
 
+---
 
-LOGIN DETAILS:
+## 🛑 LOGIN DETAILS
 
-Username: balamuruganpm
+**Username**: `balamuruganpm`
 
-Password: Balaselfie123@
+**Password**: `Balaselfie123@`
 
+---
 
-#Project Running steps:
+## 🚀 Project Running Steps
 
-python manage.py makemigrations
+1. **Download & Extract**: Download the code as a zip file, then extract it.
+   
+2. **Code Editing**: Open any code editor to make changes if necessary.
+   
+3. **Terminal Setup**: Open the terminal on Windows/Linux/Mac to run this project.
+   
+4. **Run Server**: Execute `python manage.py runserver` command to run the server.
 
-python manage.py migrate
-
-python manage.py createsuperuser
-
-python manage.py runserver
+---
