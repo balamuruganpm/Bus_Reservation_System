@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %} {% block content %}
+<main>
+    <div>
+        <h3>Hello Travelers...!</h3>
+        <h6>Delicious - Healthy food</h6>
+        <p>Whether you're exploring new destinations or embarking on an adventure, fuel your travels with our exquisite selection of meals.</p>
+        <a href="{% url 'findbus' %}"><button>FIND MY BUS</button></a>
+    </div>
+    
+    <div>
+        <img src="https://i.ibb.co/9VdjZCr/1712079517766.png" alt="image" width="500px">
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="container py-5">
+    <h3>{{msg}}</h3>
+
+    <h3 class="text-center">List of Scheduled Busses</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr class="bg-gradient bg-primary text-light">
+                <th class="p-1 text-center">ID</th>
+                <th class="p-1 text-center">NAME</th>
+                <th class="p-1 text-center">SOURCE</th>
+                <th class="p-1 text-center">DESTINATION</th>
+                <th class="p-1 text-center">NUM OF SEATS</th>
+                <th class="p-1 text-center">NUM OF SEATS REM</th>
+                <th class="p-1 text-center">PRICE</th>
+                <th class="p-1 text-center">DATE</th>
+                <th class="p-1 text-center">TIME</th>
+            </tr>
+        </thead>
+
+        {% for row in bus_list %}
+        <tr>
+            <td class="px-2 py-1 align-middle">{{row.id }}</td>
+            <td class="px-2 py-1 align-middle">{{row.bus_name}}</td>
+            <td class="px-2 py-1 align-middle">{{row.source}}</td>
+            <td class="px-2 py-1 align-middle">{{row.dest}}</td>
+            <td class="px-2 py-1 align-middle">{{row.nos}}</td>
+            <td class="px-2 py-1 align-middle">{{row.rem}}</td>
+            <td class="px-2 py-1 align-middle">{{row.price}}</td>
+            <td class="px-2 py-1 align-middle">{{row.date}}</td>
+            <td class="px-2 py-1 align-middle">{{row.time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="{% url 'bookings' %}" method="post" class="success" id="book-form">
+        <legend>Choose bus to book</legend>
+        {% csrf_token %}
+        <div class="w-100">
+            <label for="bus_id" class="control-label">Enter Bus ID</label>
+            <input name='bus_id' class="form-control" type="number" placeholder="enter nus id" id="bus_id">
+        </div>
+        <div class="w-100">
+            <label for="no_seats" class="control-label">Number of Seats</label>
+            <input name='no_seats' class="form-control" id="no_seats" placeholder="enter no of seats" type="number">
+        </div>
+        {% if error %}
+        <div class="alert alert-danger">
+            {{error}}
+        </div>
+        {% endif %}
+
+        <button class="btn btn-primary w-25" form="book-form">Book Now</button>
+    </form>
+</div>
+
+{% endblock %}

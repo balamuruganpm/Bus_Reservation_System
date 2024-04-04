@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<form action="{% url 'signup' %}" method="post" id="registration-form"
+        class="container ps-5 pe-5 pb-3 signup justify-content-center align-items-center">
+
+        <legend>Registration</legend>
+
+        {% csrf_token %}
+        <div class="w-100">
+            <label for="email" class="control-label">Email:</label>
+            <input name='email' class="form-control" type="text" id="email" placeholder="Enter your Email id" required>
+        </div>
+        <div class="w-100">
+            <label for="mobilenumber" class="control-label">Mobile No:</label>
+            <input name='mobilenumber' class="form-control" type="text" id="mobilenumber"
+                placeholder="Enter your Mobile Number" required>
+        </div>
+        <div class="w-100">
+            <label for="name" class="control-label">Username:</label>
+            <input name='name' id="name" class="form-control" type="text" placeholder="Give Username" required>
+        </div>
+        <div class="w-100">
+            <label for="password" class="control-label">Password:</label>
+            <input name='password' id="password" class="form-control" type="password" placeholder="Give password"
+                required>
+        </div>
+        <button class="btn btn-primary w-75 mt-3" form="registration-form">Create Account</button>
+
+        <a href="{% url 'home' %}" class="">already have account? click here</a>
+    </form>
+
+{% endblock %}

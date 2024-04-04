@@ -1,0 +1,128 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="container mt-4 blog">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4 fst-italic">Exciting New Blog Posts!</h1>
+            <p class="lead my-3">Explore our latest articles covering a wide range of topics.</p>
+            <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Check them out...</a></p>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">Technology</strong>
+                    <h3 class="mb-0">Unlocking the Power of AI</h3>
+                    <div class="mb-1 text-body-secondary">March 15</div>
+                    <p class="card-text mb-auto">Discover how AI is transforming industries and shaping our future.</p>
+                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                        Continue reading
+                        <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <!-- <img src="https://via.placeholder.com/200x250" class="bd-placeholder-img" width="200" height="250" alt="Thumbnail"> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success-emphasis">Health</strong>
+                    <h3 class="mb-0">Wellness Tips for a Balanced Life</h3>
+                    <div class="mb-1 text-body-secondary">March 10</div>
+                    <p class="mb-auto">Learn practical tips for maintaining physical and mental well-being in your daily life.</p>
+                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                        Continue reading
+                        <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <!-- <img src="https://via.placeholder.com/200x250" class="bd-placeholder-img" width="200" height="250" alt="Thumbnail"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                Latest Articles
+            </h3>
+
+            <article class="blog-post">
+                <h2 class="display-5 link-body-emphasis mb-1">The Future of Space Exploration</h2>
+                <p class="blog-post-meta">April 1, 2024 by <a href="#">Emily</a></p>
+
+                <p>Explore the latest advancements and upcoming missions in space exploration.</p>
+                <hr>
+                <p>Stay tuned for more updates on space technology and cosmic discoveries!</p>
+            </article>
+
+            <article class="blog-post">
+                <h2 class="display-5 link-body-emphasis mb-1">Discovering Hidden Gems in Nature</h2>
+                <p class="blog-post-meta">March 28, 2024 by <a href="#">Daniel</a></p>
+
+                <p>Embark on a journey to uncover hidden natural wonders around the globe.</p>
+                <blockquote>
+                    <p>"The clearest way into the Universe is through a forest wilderness." - John Muir</p>
+                </blockquote>
+                <p>Get ready to be inspired by the beauty of our planet!</p>
+            </article>
+
+            <nav class="blog-pagination" aria-label="Pagination">
+                <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+                <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+            </nav>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-body-tertiary rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">Welcome to our blog! Discover insightful articles on various topics.</p>
+                </div>
+
+                <div>
+                    <h4 class="fst-italic">Recent Posts</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <img src="https://via.placeholder.com/100x96" class="bd-placeholder-img" width="100" height="96" alt="Thumbnail">
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">Exploring the Depths of the Ocean</h6>
+                                    <small class="text-body-secondary">March 20, 2024</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <img src="https://via.placeholder.com/100x96" class="bd-placeholder-img" width="100" height="96" alt="Thumbnail">
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">The Art of Mindfulness</h6>
+                                    <small class="text-body-secondary">March 18, 2024</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <img src="https://via.placeholder.com/100x96" class="bd-placeholder-img" width="100" height="96" alt="Thumbnail">
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">The Power of Positive Thinking</h6>
+                                    <small class="text-body-secondary">March 16, 2024</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<main>
+    <div>
+        <h3>Hello Travelers!</h3>
+        <p>Whether you're exploring new destinations or embarking on an adventure, fuel your travels with our
+            exquisite selection of meals.</p>
+        <a href="{% url 'signup' %}"><button>No account? Registration Now</button></a>
+    </div>
+
+    <div>
+            <form action="{% url 'signin' %}" method="post" id="signin-form">
+                <legend>LOGIN NOW</legend>
+                {% csrf_token %}
+                <div class="pb-2 w-100">
+                    <label for="username" class="control-label">Username</label>
+                    <input name='name' class="form-control" type="text" id="username"
+                        placeholder="Enter your Username" required>
+                </div>
+                <div class="pb-2 w-100">
+                    <label for="example-email-input" class="control-label">Password</label>
+                    <input name='password' class="form-control" type="password"
+                        placeholder="Enter your Password" required>
+                </div>
+                <p>{{error}}</p>
+                <button class="btn btn-primary w-100" form="signin-form">Login</button>
+                <a href="{% url 'signup' %}">no account? create new</a>
+            </form>
+    </div>
+</main>
+            
+{% endblock %}

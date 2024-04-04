@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<form action="{% url 'findbus' %}" method="post" id="find-form" class="container findbus justify-content-center align-items-center">
+    <legend>Find Bus by Route & Date</legend>
+    
+    {% csrf_token %}
+    <div class="w-100">
+        <label for="source" class="control-labell">From</label>
+        <input name='source' class="form-control" type="text" id="source"
+            value="{% if data.source %}{{data.source}}{% endif %}" placeholder="From place" required>
+    </div>
+    <div class="w-100">
+        <label for="destination" class="control-labell">Destination</label>
+        <input name='destination' id="destination" class="form-control" type="text"
+            value="{% if data.destination %}{{data.destination}}{% endif %}" placeholder="To place" required>
+    </div>
+    <div class="w-100">
+        <label for="date" class="control-labell">Date</label>
+        <input name='date' id="date" class="form-control" type="date"
+            value="{% if data.date %}{{data.date}}{% endif %}" required>
+
+    </div>
+    {% if error %}
+    <div class="alert alert-danger">
+        {{error}}
+    </div>
+    {% endif %}
+
+    <button class="btn btn-primary w-50 mt-3" form="find-form">Find Bus</button>
+</form>
+
+{% endblock %}

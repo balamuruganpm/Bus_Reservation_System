@@ -1,0 +1,62 @@
+{% extends 'myapp/base.html' %} {% block content %}
+
+<div class="my-5">
+    {% for message in messages %} {% if message.tags %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endif %} {% endfor %}
+
+    <div class="d-flex flex-column w-100 table-hover justify-content-center">
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr class="bg-gradient bg-primary text-light">
+                    <th class="p-1 text-center">BOOKING ID</th>
+                    <th class="p-1 text-center">USER NAME</th>
+                    <th class="p-1 text-center">BUS NAME</th>
+                    <th class="p-1 text-center">SOURCE</th>
+                    <th class="p-1 text-center">DESTINATION</th>
+                    <th class="p-1 text-center">NUM OF SEATS</th>
+                    <th class="p-1 text-center">PRICE</th>
+                    <th class="p-1 text-center">DATE</th>
+                    <th class="p-1 text-center">TIME</th>
+                    <th class="p-1 text-center">STATUS</th>
+                </tr>
+            </thead>
+
+            {% for row in book_list %}
+            <tr>
+                <td class="px-2 py-1 align-middle">{{row.id}}</td>
+                <td class="px-2 py-1 align-middle">{{row.name}}</td>
+                <td class="px-2 py-1 align-middle">{{row.bus_name}}</td>
+                <td class="px-2 py-1 align-middle">{{row.source}}</td>
+                <td class="px-2 py-1 align-middle">{{row.dest}}</td>
+                <td class="px-2 py-1 align-middle">{{row.nos}}</td>
+                <td class="px-2 py-1 align-middle">{{row.price}}</td>
+                <td class="px-2 py-1 align-middle">{{row.date}}</td>
+                <td class="px-2 py-1 align-middle">{{row.time}}</td>
+                <td class="px-2 py-1 align-middle">{{row.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="container">
+        <form action="{% url 'cancellings' %}" method="post" id="cancel-form">
+            <legend>Cancell Booking Form</legend>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="bus_id" class="control-label">Booking ID</label>
+                <input name='bus_id' class="form-control" placeholder="booking id" type="number" id="bus_id">
+            </div>
+            {% if error %}
+            <div class="alert alert-danger">
+                {{error}}
+            </div>
+            {% endif %}
+            <button class="btn btn-sm rounded-0 btn-danger w-100" form="cancel-form">Cancel Booking</button>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
