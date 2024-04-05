@@ -2,7 +2,7 @@
 
 **PROJECT CREATED BY**: Balamurugan P M
 
-**College**: AVS College of Technology
+**College**: 6235 AVS College of Technology
 
 ---
 
