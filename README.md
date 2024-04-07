@@ -22,6 +22,14 @@
    
 3. **Terminal Setup**: Open the terminal on Windows/Linux/Mac to run this project.
    
-4. **Run Server**: Execute `python manage.py runserver` command to run the server.
+4. **Run Server**: Execute below commands
+   
+6. `python manage.py makemigrations`
+   
+8. `python manage.py migrate`
+   
+10. `python manage.py createsuperuser`
+    
+12. `python manage.py runserver` to run the server.
 
 ---
